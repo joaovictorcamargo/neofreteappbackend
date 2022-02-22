@@ -2,7 +2,7 @@ const { express, NextFunction, Request, Response } = require("express");
 require("express-async-errors");
 const { routes } = require("./routes");
 const { cors } = require("cors");
-const { request } = require("http");
+import { request } from "http";
 
 const app = express();
 app.use(cors());
