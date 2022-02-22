@@ -3,6 +3,8 @@ const express = require("express");
 require("express-async-errors");
 /* const { routes } = require("./routes"); */
 const { cors } = require("cors");
+const { routes } = require("./routes");
+/* const { cors } = require("cors"); */
 
 const app = express();
 /* app.use(cors()); */
@@ -10,23 +12,15 @@ const app = express();
 app.use(express.json());
 
 /* app.use(routes); */
+app.use(routes);
 
 //MidleWare
 /* app.use(
+app.use(
   (
     err: Error,
     request: typeof Request,
-    response: typeof Response,
-    next: typeof NextFunction
-  ) => {
-    if (err instanceof Error) {
-      return response.status(400).json({
-        message: err.message,
-      });
-    }
-
-    return response.status(500).json({
-      status: "error",
+@@ -30,6 +30,6 @@ app.use(express.json());
       message: "Internal server error",
     });
   }
