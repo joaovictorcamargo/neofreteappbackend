@@ -1,10 +1,9 @@
 const { NextFunction, Request, Response } = require("express");
 const express = require("express");
 require("express-async-errors");
-/* const { routes } = require("./routes"); */
+
 const { cors } = require("cors");
 const { routes } = require("./routes");
-/* const { cors } = require("cors"); */
 
 const app = express();
 /* app.use(cors()); */
@@ -20,7 +19,7 @@ app.use(
   (
     err: Error,
     request: typeof Request,
-@@ -30,6 +30,6 @@ app.use(express.json());
+    app.use(express.json());
       message: "Internal server error",
     });
   }
