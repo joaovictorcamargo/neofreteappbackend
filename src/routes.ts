@@ -30,7 +30,7 @@ routes.post("/forgot-password", forgotClientController.handle);
 
 routes.get(
   "/carrying/",
-  ensureAuthenticateClient,
+
   getCarryingController.findAll
 );
 routes.post("/authenticate", authenticateClientController.handle);
