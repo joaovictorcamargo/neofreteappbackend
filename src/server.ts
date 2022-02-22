@@ -1,5 +1,5 @@
 const { express, NextFunction, Request, Response } = require("express");
-import "express-async-errors";
+require("express-async-errors");
 import { routes } from "./routes";
 import cors from "cors";
 import { request } from "http";
@@ -10,12 +10,6 @@ app.use(cors());
 app.use(express.json());
 
 app.use(routes);
-
-app.get("/", (request: typeof Request, response: typeof Response) => {
-  return response.json({
-    message: "Hello World",
-  });
-});
 
 //MidleWare
 app.use(
