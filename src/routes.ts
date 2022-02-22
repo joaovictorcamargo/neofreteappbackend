@@ -30,7 +30,7 @@ routes.post("/forgot-password", forgotClientController.handle);
 
 routes.get(
   "/carrying/",
-
+  ensureAuthenticateClient,
   getCarryingController.findAll
 );
 routes.post("/authenticate", authenticateClientController.handle);
@@ -45,7 +45,7 @@ routes.get(
   ensureAuthenticateClient,
   getClientController.findOne
 );
-routes.get("/client/", ensureAuthenticateClient, getClientController.findAll);
+routes.get("/client/", getClientController.findAll);
 
 routes.get(
   "/carrying/:id",
